@@ -11,25 +11,24 @@ Things you may want to need to know:
 * react: '16.6.3'
 
 * System dependencies
-reference to: package.json and Gemfile
+* reference to: package.json and Gemfile
 
 * Configuration
-> bundle install 
-> foreman start ( under root dir, run this command, open browser:localhost:5000)
+* bundle install 
+* foreman start (Under root dir, run this command, open browser:localhost:5000)
 
 * Database creation: postgresql
 
 * Database initialization:
-(>heroku run) 
->rake db:create 
->rake db:migrate
->rake db:seed
+* (>heroku run) 
+* >rake db:create 
+* >rake db:migrate
+* >rake db:seed
 
 * How to run the test suite
-TBD
 
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions: heroku
-https://rorprobasball.herokuapp.com
+* https://rorprobasball.herokuapp.com
 * ...
