@@ -1,41 +1,54 @@
 import React, { Component } from 'react'
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table'
-
 import _ from 'lodash'
 
 import COLUMNS from './playerFields'
+import PLAYERTESTDATA from './playerTestData'
 
-//for testing only
-const playersTest = [{
-	id:1,
-	surname:'Allen',
-	given_name: 'Miao',
-	AVG: 1,
-	home_run: 1,
-	RBI: 2,
-	RUNS: 3,
-	SB: 4,
-	OPS: 5
-},{
-	id:2,
-	surname:'Meng',
-	given_name: 'Yao',
-	AVG: 2,
-	home_run: 2,
-	RBI: 3,
-	RUNS: 4,
-	SB: 5,
-	OPS: 6
-}]
 
 class SortedTableComponent extends Component {
 	constructor(props) {
 		super(props)
 		this.options = {
-			defaultSortName: 'AVG', 
-			defaultSortOrder: 'desc'
+			page: 2,  // which page you want to show as default
+      sizePerPageList: [ {
+        text: '5', value: 5
+      }, {
+        text: '10', value: 10
+      }, {
+        text: 'All', value: this.getData().length
+      } ], // you can change the dropdown list for size per page
+      sizePerPage: 5,  // which size per page you want to locate as default
+      pageStartIndex: 0, // where to start counting the pages
+      paginationSize: 3,  // the pagination bar size.
+      prePage: 'Prev', // Previous page button text
+      nextPage: 'Next', // Next page button text
+      firstPage: 'First', // First page button text
+      lastPage: 'Last', // Last page button text
+      paginationShowsTotal: this.renderShowsTotal,  // Accept bool or function
+      //paginationPosition: 'top',  // default is bottom, top and both is all available
+      // hideSizePerPage: true, > You can hide the dropdown for sizePerPage
+      //alwaysShowAllBtns: true // Always show next and previous button
+      // withFirstAndLast: false > Hide the going to First and Last page button
 		}
-		console.log(this.props.players)
+		this.sortOptions = {
+			defaultSortName: 'AVG', 
+			defaultSortOrder: 'desc',
+		}
+	}
+
+	renderShowsTotal(start, to, total) {
+    return (
+      <p style={ { color: 'blue' } }>
+        From { start } to { to }, totals is { total }&nbsp;&nbsp;(its a customize text)
+      </p>
+    );
+  }
+
+
+	getData() {
+		const { players } = this.props.players
+		return (players && players.length!==0) ? players : PLAYERTESTDATA
 	}
 
 	renderColumn() {
@@ -46,7 +59,10 @@ class SortedTableComponent extends Component {
 	render() {
 		return (
 			<div>
-				<BootstrapTable data={ playersTest || this.props.players } options={ this.options }>
+				<BootstrapTable 
+					data={ this.getData() } 
+					options={ this.sortOptions }
+					pagination={ true }>
 					{this.renderColumn()}
         </BootstrapTable>
 			</div>
