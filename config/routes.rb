@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+	root 'welcome#index'
 
-  resources :teams
+	#a post request to server.
+	get '/getPlayerList', to: 'welcome#index'
+	#act as catch all and send back to index path, handle by react Route.
+	match '*path', to: 'welcome#index', via: :all
 
-  resources :players
-  
-  root 'welcome#index'
 end

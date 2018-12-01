@@ -7,9 +7,8 @@
   </tr>
   <% @players.each do |player| %>
     <tr>
-      <td><%= player.id %></td>
       <td><%= player.surname %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
+      
     </tr>
   <% end %>
 </table>
