@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import SortedTableComponent from './SortedTable'
+import SortedTableComponent from './SortedTable/SortedTable'
 import { fetchPlayers } from '../store/actions/playerActions'
 
 class HomeComponent extends Component {
@@ -28,10 +28,8 @@ class HomeComponent extends Component {
 
 		return(
 			<div className="container">
-				<div className="col-md-8 offset-md-2">
-					<h2>Home Page</h2>
-					<SortedTableComponent />
-				</div>
+				<h2>Home Page</h2>
+				<SortedTableComponent players={players}/>
 			</div>
 		)
 	}
