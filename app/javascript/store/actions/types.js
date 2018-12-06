@@ -1,1 +1,2 @@
 export const FETCH_PLAYERS = "FETCH_PLAYERS";
+export const FETCH_MORE_PLAYERS = "FETCH_MORE_PLAYERS";

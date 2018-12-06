@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_01_020255) do
+ActiveRecord::Schema.define(version: 2018_12_01_014532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,12 +37,32 @@ ActiveRecord::Schema.define(version: 2018_12_01_020255) do
     t.integer "walks"
     t.integer "struck_out"
     t.integer "hit_by_pitch"
+    t.integer "throws"
+    t.integer "wins"
+    t.integer "losses"
+    t.integer "saves"
+    t.integer "complete_games"
+    t.integer "shut_outs"
+    t.integer "era"
+    t.integer "innings"
+    t.integer "earned_runs"
+    t.integer "hit_batter"
+    t.integer "wild_pitches"
+    t.integer "balk"
+    t.integer "walked_batter"
+    t.integer "struck_out_batter"
     t.string "player_id"
+    t.string "team_id"
+    t.integer "year"
+    t.string "league_name"
+    t.string "division_name"
+    t.string "team_city"
+    t.string "team_name"
+    t.float "avg"
+    t.float "ops"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "team_id"
     t.index ["player_id"], name: "index_players_on_player_id"
-    t.index ["team_id"], name: "index_players_on_team_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -57,5 +77,4 @@ ActiveRecord::Schema.define(version: 2018_12_01_020255) do
     t.index ["team_id"], name: "index_teams_on_team_id"
   end
 
-  add_foreign_key "players", "teams"
 end

@@ -22,8 +22,32 @@ class CreatePlayers < ActiveRecord::Migration[5.2]
       t.integer :walks
       t.integer :struck_out
       t.integer :hit_by_pitch
-      t.string :player_id
+      t.integer :throws
+      t.integer :wins
+      t.integer :losses
+      t.integer :saves
+      t.integer :complete_games
+      t.integer :shut_outs
+      t.integer :era
+      t.integer :innings
+      t.integer :earned_runs
+      t.integer :hit_batter
+      t.integer :wild_pitches
+      t.integer :balk
+      t.integer :walked_batter
+      t.integer :struck_out_batter
 
+      t.string :player_id
+      t.string :team_id
+      t.integer :year
+      t.string :league_name
+      t.string :division_name
+      t.string :team_city
+      t.string :team_name
+      
+      t.float :avg
+      t.float :ops
+      
       t.timestamps
     end
 

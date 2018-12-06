@@ -22,6 +22,9 @@ gem 'safe_attributes'
 #add react in
 gem 'react-rails'
 
+# Use mongo db
+gem 'mongoid', '~> 6.1.0'
+
 #add webpacker
 gem 'webpacker', '~> 3.5'
 
