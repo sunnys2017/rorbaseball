@@ -15,7 +15,7 @@ Things you may want to need to know:
 
 * Configuration
 * bundle install 
-* foreman start (Under root dir, run this command, open browser:localhost:5000)
+* foreman start (Under root dir, run this, open browser:localhost:5000)
 
 * Database creation: postgresql
 
@@ -25,7 +25,7 @@ Things you may want to need to know:
 * >rake db:migrate
 * >rake db:seed
 
-* How to run the test suite
+* OPS business logic(method) is not done. Not very clear with baseball concepts, need more digging.
 
 * Services (job queues, cache servers, search engines, etc.)
 
