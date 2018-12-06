@@ -23,7 +23,7 @@ Things you may want to need to know:
 * (>heroku run) 
 * >rake db:create 
 * >rake db:migrate
-* >rake db:seed
+* >rake parse:xml
 
 * OPS business logic(method) is not done. Not very clear with baseball concepts, need more digging.
 
